@@ -14,17 +14,47 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align items to the top */
     overflow-x: hidden;
 }
 
 /* Navigation Bar */
 nav {
-    position: sticky;
+    position: sticky; /* Sticks at the top on scroll */
     top: 0;
-    background: rgba(28, 28, 28, 0.9);
-    padding: 10px;
-    z-index: 100;
+    background: rgba(28, 28, 28, 0.9); /* Semi-transparent background */
+    padding: 15px 30px; /* Padding for spacing */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between nav items */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width of the screen */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+nav .logo {
+    font-size: 1.5em; /* Larger font size for logo */
+    font-weight: bold; /* Bold text for emphasis */
+    color: #00FFC6; /* Neon Teal color for logo */
+}
+
+nav ul {
+    list-style-type: none; /* Remove default list styling */
+    display: flex; /* Flexbox for horizontal alignment */
+}
+
+nav ul li {
+    margin-left: 20px; /* Spacing between nav items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1em; /* Font size for nav items */
+    color: #e0e0e0; /* Light gray text color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #00FFC6; /* Neon teal color on hover */
 }
 
 /* Header Styling */
@@ -37,15 +67,12 @@ header h1 {
     font-size: 3em;
     font-weight: 700;
     color: #00FFC6; /* Neon Teal */
-    text-shadow: 0 0 15px rgba(0, 255, 198, 0.8), 0 0 30px rgba(0, 255, 198, 0.6);
-    letter-spacing: 2px;
 }
 
 header p {
     font-size: 1.2em;
     font-weight: 300;
     color: #aaa;
-    margin-top: 10px;
 }
 
 /* Features Section */
@@ -58,7 +85,6 @@ header p {
     font-size: 2.5em; /* Increased for better visibility */
     font-weight: 600;
     color: #ff6f61; /* Neon Coral */
-    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
 }
 
 /* Feature List */
@@ -106,10 +132,10 @@ button:hover {
    bottom :20px; 
    right :20px; 
    z-index :1000; 
-   padding :10px; /* Reduced padding for a more compact button */
-   font-size :1em; /* Consistent font size with other buttons */
-   border-radius :20%; 
-   background-image: linear-gradient(to right, #00FFC6, #ff6f61);; /* Consistent base color with other buttons */
+   padding :10px; 
+   font-size :1em; 
+   border-radius :50%; 
+   background-image : linear-gradient(to right, #00FFC6, #ff6f61); 
    color : #000; 
    border : none; 
    transition : background-color .3s ease, transform .2s ease; 
@@ -120,7 +146,7 @@ button:hover {
    transform : translateY(-2px); 
 }
 
-/* Sections Styling */
+/* Sections Styling (for both pages)*/
 .upload-section,
 .search-section,
 .recipe-text,
@@ -160,7 +186,7 @@ textarea {
    resize :none; 
 }
 
-/* Output Window */
+/* Output Window Styles*/
 .output-window {
    background-color :rgba(255,255,255,.15); /* Frosted Glass Effect */ 
    backdrop-filter :blur(10px); 
@@ -169,7 +195,7 @@ textarea {
    box-shadow :0 -4px -10px rgba(0,255,198,.3); 
 }
 
-/* Camera Popup Styles */
+/* Camera Popup Styles (if needed in future)*/
 .camera-popup {
    position :fixed; 
    top :50%; 
@@ -177,13 +203,13 @@ textarea {
    transform :translate(-50%, -50%); 
    width :80%; 
    max-width :600px; 
-   background-color :rgba(255,255,255,.15); /* Frosted Glass Effect */  
+   background-color :rgba(255,255,255,.15);  
    backdrop-filter :blur(10px);  
    padding :30px;  
-   border-radius :15px;  
+   border-radius :30%;  
 }
 
-/* Close Button Styles */
+/* Close Button Styles (if needed in future)*/
 .close-button {
    position:absolute;  
    top :15px;  

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Recipe AI - Find Your Recipe</title>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Recipe AI</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipe.html">Find Your Recipe</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="recipe-page">
+        <h1>🔬 Find Your Recipe</h1>
+
+        <section class="upload-section">
+            <input type="file" accept="image/*" id="upload-image">
+        </section>
+
+        <section class="search-section">
+            <input type="text" id="ingredient-search" placeholder="🚀 Enter ingredients">
+        </section>
+
+        <section class="recipe-text">
+            <textarea id="recipe-text" placeholder="✨ Your recipe will appear here..." readonly></textarea>
+        </section>
+
+        <section class="output-window">
+            <h2>🔮 Output</h2>
+            <div id="output-result">🤖 Your AI-powered recipe suggestions will appear here...</div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
