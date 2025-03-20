@@ -1,8 +1,13 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #1f1f1f, #3e3e3e);
     color: #ddd;
     min-height: 100vh;
@@ -10,50 +15,43 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
-h1 {
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
     color: #00FFC6;
-    font-family: 'Orbitron', sans-serif;
     text-shadow: 0 0 15px #00FFC6, 0 0 30px #004d4d;
+    letter-spacing: 2px;
 }
 
-button {
-    background: linear-gradient(145deg, #00FFC6, #006D5B);
-    margin-top: 10px;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 40px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px #00FFC6;
+header p {
     font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    color: #aaa;
+    margin-top: 10px;
     letter-spacing: 1px;
-    
-    
 }
 
-element.style {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 5px 10px;
-    background: rgb(255, 85, 85);
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Features Section */
+.features {
+    text-align: center;
+    margin: 40px 0;
 }
 
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px #00FFC6;
-}
-
-.get-started {
-    font-size: 1.5em;
-    margin: 20px;
+.features h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    color: #00FFC6;
+    text-shadow: 0 0 10px #00FFC6;
+    margin-bottom: 20px;
 }
 
 .features ul {
@@ -62,38 +60,72 @@ button:hover {
 }
 
 .features li {
-    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.2em;
     color: #00FFC6;
+    margin: 10px 0;
+    text-shadow: 0 0 5px #00FFC6;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(145deg, #00FFC6, #006D5B);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px #00FFC6;
+    margin: 10px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #00FFC6;
 }
 
 .chatbot-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    font-size: 1em;
-    padding: 10px;
+    font-size: 1.2em;
+    padding: 12px 24px;
 }
 
+/* Sections Styling */
 .upload-section, .search-section, .recipe-text, .output-window {
-    margin: 20px 0;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 input, textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 12px;
     border: none;
     border-radius: 10px;
     background: #222;
     color: #00FFC6;
     font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
     box-shadow: 0 0 10px #00FFC6 inset;
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 15px #00FFC6;
 }
 
 textarea {
     height: 150px;
     resize: none;
+    margin-top: 10px;
 }
 
 .output-window {
@@ -101,10 +133,57 @@ textarea {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px #00FFC6;
+    text-align: left;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    color: #ddd;
+    line-height: 1.5;
 }
 
-h2 {
-    color: #00FFC6;
+.output-window h2 {
     font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    color: #00FFC6;
     text-shadow: 0 0 10px #00FFC6;
+    margin-bottom: 10px;
+}
+
+/* Camera Popup */
+.camera-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 645px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00FFC6;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.camera-popup video {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.camera-popup button {
+    margin-top: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FF5555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 1001;
 }
