@@ -7,15 +7,24 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1f1f1f, #3e3e3e);
-    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    color: #e0e0e0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(28, 28, 28, 0.9);
+    padding: 10px;
+    z-index: 100;
 }
 
 /* Header Styling */
@@ -25,165 +34,158 @@ header {
 }
 
 header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5em;
-    color: #00FFC6;
-    text-shadow: 0 0 15px #00FFC6, 0 0 30px #004d4d;
+    font-size: 3em;
+    font-weight: 700;
+    color: #00FFC6; /* Neon Teal */
+    text-shadow: 0 0 15px rgba(0, 255, 198, 0.8), 0 0 30px rgba(0, 255, 198, 0.6);
     letter-spacing: 2px;
 }
 
 header p {
-    font-family: 'Orbitron', sans-serif;
     font-size: 1.2em;
+    font-weight: 300;
     color: #aaa;
     margin-top: 10px;
-    letter-spacing: 1px;
 }
 
 /* Features Section */
 .features {
     text-align: center;
-    margin: 40px 0;
+    margin: 40px auto; /* Centered with auto margins */
 }
 
 .features h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2em;
-    color: #00FFC6;
-    text-shadow: 0 0 10px #00FFC6;
-    margin-bottom: 20px;
+    font-size: 2.5em; /* Increased for better visibility */
+    font-weight: 600;
+    color: #ff6f61; /* Neon Coral */
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
 }
 
+/* Feature List */
 .features ul {
     list-style-type: none;
     padding: 0;
 }
 
 .features li {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2em;
-    color: #00FFC6;
-    margin: 10px 0;
-    text-shadow: 0 0 5px #00FFC6;
+    display: inline-block; /* Card layout effect */
+    width: calc(33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly darker for better contrast */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+}
+
+.features li:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 111, 97, .5); /* Shadow on hover for depth */
 }
 
 /* Buttons */
 button {
-    background: linear-gradient(145deg, #00FFC6, #006D5B);
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    border-radius: 40px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1em;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px #00FFC6;
-    margin: 10px;
+    background-color: #00FFC6; /* Base color for buttons */
+    color: #000; /* Dark text for contrast */
+    border: none; /* No borders for a clean look */
+    padding: 10px 20px; /* Reduced padding for a balanced size */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    border-radius: 50px; /* Rounded corners for a modern look */
+    font-size: .9em; /* Slightly smaller text size for compact buttons */
+    transition: background-color .3s ease, transform .2s ease; /* Smooth transitions for hover effects */
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px #00FFC6;
+   background-color : #ff6f61; /* Change background color on hover */
+   transform : translateY(-2px); 
+   box-shadow : inset -4px -4px .5rem rgba(255,255,198,.5); /* Subtle inset shadow on hover */
 }
 
+/* Chatbot Button */
 .chatbot-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 1.2em;
-    padding: 12px 24px;
+   position :fixed; 
+   bottom :20px; 
+   right :20px; 
+   z-index :1000; 
+   padding :10px; /* Reduced padding for a more compact button */
+   font-size :1em; /* Consistent font size with other buttons */
+   border-radius :20%; 
+   background-image: linear-gradient(to right, #00FFC6, #ff6f61);; /* Consistent base color with other buttons */
+   color : #000; 
+   border : none; 
+   transition : background-color .3s ease, transform .2s ease; 
+}
+
+.chatbot-button:hover {
+   background-color : #ff6f61; 
+   transform : translateY(-2px); 
 }
 
 /* Sections Styling */
-.upload-section, .search-section, .recipe-text, .output-window {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
+.upload-section,
+.search-section,
+.recipe-text,
+.output-window {
+   width :90%; 
+   max-width :600px; 
+   margin :20px auto; 
+   text-align :center; 
 }
 
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: #222;
-    color: #00FFC6;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1em;
-    box-shadow: 0 0 10px #00FFC6 inset;
-    transition: box-shadow 0.3s ease;
+/* Input and Textarea Styles */
+input,
+textarea {
+   width :100%; 
+   padding :14px; 
+   border-radius :8px; 
+   background-color :rgba(255,255,255,.1); /* Frosted Glass Effect */
+   backdrop-filter :blur(10px); 
+   color :#e0e0e0; 
+   border :none; 
+   transition :box-shadow .3s ease; 
 }
 
-input:focus, textarea:focus {
-    outline: none;
-    box-shadow: 0 0 15px #00FFC6;
+input:hover,
+textarea:hover,
+button:hover {
+   box-shadow :inset -4px -4px .5rem rgba(255,255,198,.3); 
+}
+
+input::placeholder,
+textarea::placeholder { /* Placeholder styles for better visibility */
+   color :rgba(224,224,224,.7); /* Lighter placeholder text */
 }
 
 textarea {
-    height: 150px;
-    resize: none;
-    margin-top: 10px;
+   height :150px; /* Fixed height for consistency */ 
+   resize :none; 
 }
 
+/* Output Window */
 .output-window {
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00FFC6;
-    text-align: left;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1em;
-    color: #ddd;
-    line-height: 1.5;
+   background-color :rgba(255,255,255,.15); /* Frosted Glass Effect */ 
+   backdrop-filter :blur(10px); 
+   padding :20px; 
+   border-radius :10px; 
+   box-shadow :0 -4px -10px rgba(0,255,198,.3); 
 }
 
-.output-window h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5em;
-    color: #00FFC6;
-    text-shadow: 0 0 10px #00FFC6;
-    margin-bottom: 10px;
-}
-
-/* Camera Popup */
+/* Camera Popup Styles */
 .camera-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 645px;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00FFC6;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+   position :fixed; 
+   top :50%; 
+   left :50%; 
+   transform :translate(-50%, -50%); 
+   width :80%; 
+   max-width :600px; 
+   background-color :rgba(255,255,255,.15); /* Frosted Glass Effect */  
+   backdrop-filter :blur(10px);  
+   padding :30px;  
+   border-radius :15px;  
 }
 
-.camera-popup video {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.camera-popup button {
-    margin-top: 10px;
-}
-
+/* Close Button Styles */
 .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #FF5555;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    z-index: 1001;
+   position:absolute;  
+   top :15px;  
+   right :15px;  
 }
