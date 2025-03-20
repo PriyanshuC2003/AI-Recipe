@@ -1,0 +1,110 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #1f1f1f, #3e3e3e);
+    color: #ddd;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #00FFC6;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 15px #00FFC6, 0 0 30px #004d4d;
+}
+
+button {
+    background: linear-gradient(145deg, #00FFC6, #006D5B);
+    margin-top: 10px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px #00FFC6;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    
+    
+}
+
+element.style {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background: rgb(255, 85, 85);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #00FFC6;
+}
+
+.get-started {
+    font-size: 1.5em;
+    margin: 20px;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #00FFC6;
+}
+
+.chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.upload-section, .search-section, .recipe-text, .output-window {
+    margin: 20px 0;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #222;
+    color: #00FFC6;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 10px #00FFC6 inset;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+.output-window {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00FFC6;
+}
+
+h2 {
+    color: #00FFC6;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px #00FFC6;
+}
