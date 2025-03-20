@@ -10,8 +10,6 @@ function openChatbot() {
     alert('🤖 Chatbot feature coming soon!');
 }
 
-
-
 // Mock function for ingredient search
 const searchInput = document.getElementById('ingredient-search');
 searchInput?.addEventListener('input', () => {
@@ -79,17 +77,19 @@ cameraButton.addEventListener('click', () => {
 
     setTimeout(() => cameraPopup.style.opacity = '1', 50);
 
-    // Close button for popup
+    // Close button for popup - FIXED VERSION
     const closeButton = document.createElement('button');
     closeButton.innerText = '❌';
     closeButton.style.position = 'absolute';
     closeButton.style.top = '5px';
     closeButton.style.right = '5px';
     closeButton.style.padding = '5px 10px';
+    closeButton.style.background = '#FF5555'; // Added missing background color
     closeButton.style.color = '#FFF';
     closeButton.style.border = 'none';
     closeButton.style.borderRadius = '5px';
     closeButton.style.cursor = 'pointer';
+    closeButton.style.zIndex = '1001'; // Added to ensure it's above other elements
     cameraPopup.appendChild(closeButton);
 
     // Add video stream to popup
@@ -139,14 +139,23 @@ cameraButton.addEventListener('click', () => {
         closePopup();
     });
 
-    // Close button with smooth fade-out
-    closeButton.addEventListener('click', closePopup);
+    // Close button event handler - FIXED VERSION
+    closeButton.addEventListener('click', () => {
+        closePopup();
+    });
 
+    // Improved closePopup function
     function closePopup() {
-        cameraPopup.style.opacity = '0';
-        setTimeout(() => {
-            document.body.removeChild(cameraPopup);
-            if (stream) stream.getTracks().forEach(track => track.stop());
-        }, 500);
+        if (cameraPopup && document.body.contains(cameraPopup)) {
+            cameraPopup.style.opacity = '0';
+            setTimeout(() => {
+                if (document.body.contains(cameraPopup)) {
+                    document.body.removeChild(cameraPopup);
+                }
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                }
+            }, 500);
+        }
     }
 });
